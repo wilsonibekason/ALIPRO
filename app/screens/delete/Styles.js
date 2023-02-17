@@ -4,11 +4,17 @@ import AppText from "../../components/AppText/AppText";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import MainButton from "../../components/MainButton";
 import WelcomeScreen from "../WelcomeScreen";
+import { AppCard } from "../../components/AppCard";
 
 const Styles = () => {
   return (
     <>
-      <WelcomeScreen />
+      {/* <WelcomeScreen /> */}
+      <AppCard
+        // image={require("../../app/assets/jacket.jpg")}
+        subTitle={"$100"}
+        title={"Appl"}
+      />
     </>
   );
 };
