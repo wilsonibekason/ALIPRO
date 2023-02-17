@@ -1,5 +1,13 @@
 import React from "react";
-import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
+import {
+  Image,
+  ImageBackground,
+  Platform,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
+import MainButton from "../components/MainButton";
 
 const WelcomeScreen = () => {
   return (
@@ -9,10 +17,12 @@ const WelcomeScreen = () => {
     >
       <View style={styles.logoContainer}>
         <Image source={require("../assets/logo-red.png")} style={styles.logo} />
-        <Text>Sell what you don't need </Text>
+        <Text style={styles.tagline}>Sell what you don't need </Text>
       </View>
-
-      <View style={styles.loginButton}></View>
+      <View style={styles.buttonContainer}>
+        <MainButton title={"Login"} />
+        <MainButton title={"Register"} color={""} />
+      </View>
       <View style={styles.registerButton}></View>
     </ImageBackground>
   );
@@ -42,6 +52,16 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 70,
     alignItems: "center",
+  },
+  buttonContainer: {
+    padding: 20,
+    width: "100%",
+  },
+  tagline: {
+    fontSize: 25,
+    fontWeight: "600",
+    paddingVertical: 4,
+    fontFamily: Platform.OS === "android" ? "Roboto" : "helvetica",
   },
 });
 export default WelcomeScreen;

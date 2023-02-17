@@ -22,12 +22,14 @@ import {
 } from "@react-native-community/hooks";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
+import Styles from "./app/screens/delete/Styles";
 
 export default function App() {
   return (
     <>
       {/* <WelcomeScreen /> */}
-      <ViewImageScreen />
+      {/* <ViewImageScreen /> */}
+      <Styles />
     </>
   );
 }
