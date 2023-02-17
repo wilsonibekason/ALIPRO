@@ -1,6 +1,7 @@
 import React from "react";
 import { Image, View } from "react-native";
 import AppText from "../AppText/AppText";
+import ListItem from "../ListItem/ListItem";
 import { styles } from "./style";
 
 const AppCard = ({ title, subTitle, image }) => {
@@ -14,6 +15,11 @@ const AppCard = ({ title, subTitle, image }) => {
         <View style={styles.detailsContainer}>
           <AppText style={styles.title}> {title}</AppText>
           <AppText style={styles.subTitle}>{subTitle}</AppText>
+          <ListItem
+            title={"Wilson Ibekason"}
+            image={require("../../../app/assets/mosh.jpg")}
+            subTitle={"$3383"}
+          />
         </View>
       </View>
     </>
