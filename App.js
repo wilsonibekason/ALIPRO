@@ -23,13 +23,15 @@ import {
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
 import Styles from "./app/screens/delete/Styles";
+import AppMessageScreen from "./app/components/MessageScreen/AppMessageScreen";
 
 export default function App() {
   return (
     <>
       {/* <WelcomeScreen /> */}
-      <ViewImageScreen />
+      {/* <ViewImageScreen /> */}
       {/* <Styles /> */}
+      <AppMessageScreen />
     </>
   );
 }
