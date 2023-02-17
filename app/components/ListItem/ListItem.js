@@ -10,7 +10,7 @@ const ListItem = ({ image, title, subTitle }) => {
         <Image source={image} style={styles.image} />
         <View>
           <AppText style={styles.title}>{title}</AppText>
-          <AppText style={styles.title}>{subTitle}</AppText>
+          <AppText style={styles.subTitle}>{subTitle}</AppText>
         </View>
       </View>
     </>
@@ -33,6 +33,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     color: colors.primary,
+  },
+  subTitle: {
+    fontSize: 15,
+    color: colors.medium,
   },
   detailContainer: {
     flexDirection: "column",

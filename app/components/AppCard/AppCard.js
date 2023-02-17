@@ -15,11 +15,13 @@ const AppCard = ({ title, subTitle, image }) => {
         <View style={styles.detailsContainer}>
           <AppText style={styles.title}> {title}</AppText>
           <AppText style={styles.subTitle}>{subTitle}</AppText>
-          <ListItem
-            title={"Wilson Ibekason"}
-            image={require("../../../app/assets/mosh.jpg")}
-            subTitle={"$3383"}
-          />
+          <View style={styles.userContainer}>
+            <ListItem
+              title={"Wilson Ibekason"}
+              image={require("../../../app/assets/mosh.jpg")}
+              subTitle={"$3383"}
+            />
+          </View>
         </View>
       </View>
     </>

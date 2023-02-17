@@ -28,8 +28,8 @@ export default function App() {
   return (
     <>
       {/* <WelcomeScreen /> */}
-      {/* <ViewImageScreen /> */}
-      <Styles />
+      <ViewImageScreen />
+      {/* <Styles /> */}
     </>
   );
 }

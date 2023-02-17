@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
   },
   image: {
     width: "100%",
-    height: 200,
+    height: 300,
     resizeMode: "cover",
     borderRadius: 15,
   },
@@ -27,5 +27,8 @@ export const styles = StyleSheet.create({
   },
   subTitle: {
     color: colors.primary,
+  },
+  userContainer: {
+    marginVertical: 40,
   },
 });
