@@ -1,18 +1,23 @@
 import React from "react";
-import { Image, StyleSheet, View } from "react-native";
+import { Image, StyleSheet, TouchableHighlight, View } from "react-native";
 import colors from "../../config/colors";
 import AppText from "../AppText/AppText";
+import Swipeable from "react-native-gesture-handler/Swipeable";
 
-const ListItem = ({ image, title, subTitle }) => {
+const ListItem = ({ image, title, subTitle, onPress, renderRightActions }) => {
   return (
     <>
-      <View style={styles.container}>
-        <Image source={image} style={styles.image} />
-        <View>
-          <AppText style={styles.title}>{title}</AppText>
-          <AppText style={styles.subTitle}>{subTitle}</AppText>
-        </View>
-      </View>
+      <Swipeable renderRightActions={renderRightActions}>
+        <TouchableHighlight onPress={onPress} underlayColor={colors.lightGray}>
+          <View style={styles.container}>
+            <Image source={image} style={styles.image} />
+            <View>
+              <AppText style={styles.title}>{title}</AppText>
+              <AppText style={styles.subTitle}>{subTitle}</AppText>
+            </View>
+          </View>
+        </TouchableHighlight>
+      </Swipeable>
     </>
   );
 };
@@ -20,6 +25,7 @@ const ListItem = ({ image, title, subTitle }) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
+    padding: 10,
   },
   image: {
     height: 70,
