@@ -1,6 +1,7 @@
 import React from "react";
 import { FlatList, Platform, StatusBar, StyleSheet, View } from "react-native";
 import ListItem from "../ListItem/ListItem";
+import ListItemDeleteAction from "../ListItemComposables/ListItemDeleteAction";
 import ListItemSeperator from "../ListItemSeperator";
 import AppScreen from "../Screen/AppScreen";
 
@@ -36,6 +37,8 @@ const AppMessageScreen = () => {
               title={item.description}
               subTitle={item.title}
               image={item.image}
+              onPress={() => console.log()}
+              renderRightActions={() => <ListItemDeleteAction />}
             />
           )}
           ItemSeparatorComponent={() => <ListItemSeperator />}
