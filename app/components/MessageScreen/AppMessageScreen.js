@@ -14,13 +14,13 @@ const AppMessageScreen = () => {
       image: require("../../../app/assets/mosh.jpg"),
     },
     {
-      id: 1,
+      id: 2,
       title: "T1",
       description: "D1",
       image: require("../../../app/assets/mosh.jpg"),
     },
     {
-      id: 1,
+      id: 3,
       title: "T1",
       description: "D1",
       image: require("../../../app/assets/mosh.jpg"),
@@ -39,6 +39,7 @@ const AppMessageScreen = () => {
               image={item.image}
               onPress={() => console.log()}
               renderRightActions={() => <ListItemDeleteAction />}
+              key={item.id}
             />
           )}
           ItemSeparatorComponent={() => <ListItemSeperator />}
