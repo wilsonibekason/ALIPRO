@@ -28,21 +28,34 @@ import AccountScreen from "./app/screens/AccountScreen/AccountScroll";
 import TextInput from "./app/components/TextInput/TextInput";
 import AppTextInput from "./app/components/TextInput/TextInput";
 import { useState } from "react";
+import AppPicker from "./app/components/TextInput/AppPicker";
+import { AppScreen } from "./app/components";
 
 export default function App() {
   const [firstName, setFirstName] = useState("");
+  const [modalVisible, setModalVisible] = useState(false);
+  const handleModal = setModalVisible((prevState) => !prevState);
   return (
     <>
       {/* <WelcomeScreen /> */}
       {/* <ViewImageScreen /> */}
       {/* <Styles /> */}
       {/* <AppMessageScreen /> */}
-      <AccountScreen />
-      <AppTextInput
-        icon={"email"}
-        onChangeText={(text) => setFirstName(text)}
-        placeholder={"Enter your Name"}
-      />
+      {/* <AccountScreen /> */}
+      <AppScreen>
+        <AppTextInput
+          icon={"email"}
+          onChangeText={(text) => setFirstName(text)}
+          placeholder={"Enter your Name"}
+        />
+        <AppPicker
+          placeholder={"Catregory"}
+          icon={"file"}
+          onPress={handleModal}
+          modalVisible={modalVisible}
+        />
+        <AppTextInput icon={"email"} placeholder={"enter"} />
+      </AppScreen>
     </>
   );
 }
