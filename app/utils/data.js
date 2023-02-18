@@ -1,3 +1,5 @@
+import colors from "../config/colors";
+
 const initialMessages = [
   {
     id: 1,
@@ -19,4 +21,35 @@ const initialMessages = [
   },
 ];
 
-export { initialMessages };
+const IconData = {
+  name: "email",
+  iconColor: "primary",
+  size: 30,
+  backgroundColor: colors.medium,
+};
+
+const menuItems = [
+  {
+    id: 1,
+    title: "My Listings",
+    description: "",
+    image: require("../../app/assets/mosh.jpg"),
+    icon: IconData,
+  },
+  {
+    id: 2,
+    title: "My Listings",
+    description: "",
+    image: require("../../app/assets/mosh.jpg"),
+    icon: IconData,
+  },
+  {
+    id: 3,
+    title: "My Listings",
+    description: "",
+    image: require("../../app/assets/mosh.jpg"),
+    icon: IconData,
+  },
+];
+
+export { initialMessages, menuItems };

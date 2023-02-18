@@ -24,6 +24,7 @@ import WelcomeScreen from "./app/screens/WelcomeScreen";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
 import Styles from "./app/screens/delete/Styles";
 import AppMessageScreen from "./app/components/MessageScreen/AppMessageScreen";
+import AccountScreen from "./app/screens/AccountScreen/AccountScroll";
 
 export default function App() {
   return (
@@ -31,7 +32,8 @@ export default function App() {
       {/* <WelcomeScreen /> */}
       {/* <ViewImageScreen /> */}
       {/* <Styles /> */}
-      <AppMessageScreen />
+      {/* <AppMessageScreen /> */}
+      <AccountScreen />
     </>
   );
 }
