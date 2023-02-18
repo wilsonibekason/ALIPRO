@@ -1,6 +1,7 @@
 import React from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 import { AppIcon, AppScreen, ListItem } from "../../components";
+import ListItemSeperator from "../../components/ListItemSeperator";
 import colors from "../../config/colors";
 import { menuItems } from "../../utils/data";
 
@@ -25,6 +26,7 @@ const AccountScreen = () => {
         <View style={styles.container}>
           <FlatList
             data={menuItems}
+            ItemSeparatorComponent={<ListItemSeperator />}
             keyExtractor={(menuItem) => menuItem.title}
             renderItem={({ item }) => (
               <ListItem
@@ -38,6 +40,7 @@ const AccountScreen = () => {
                 }
                 subTitle={item.description}
                 title={item.title}
+                key={item.key}
               />
             )}
           />
@@ -52,7 +55,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.lightGray,
   },
   container: {
-    padding: 10,
     marginVertical: 10,
   },
 });

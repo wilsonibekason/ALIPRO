@@ -6,4 +6,5 @@ export default {
   medium: "#6e6969",
   tomato: "tomato",
   lightGray: "#CED0CE",
+  dark: "#0C0C0C",
 };
