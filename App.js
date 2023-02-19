@@ -27,14 +27,22 @@ import AppMessageScreen from "./app/components/MessageScreen/AppMessageScreen";
 import AccountScreen from "./app/screens/AccountScreen/AccountScroll";
 import TextInput from "./app/components/TextInput/TextInput";
 import AppTextInput from "./app/components/TextInput/TextInput";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import AppPicker from "./app/components/TextInput/AppPicker";
 import { AppScreen } from "./app/components";
+import { categories } from "./app/utils/data";
 
 export default function App() {
   const [firstName, setFirstName] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
-  const handleModal = setModalVisible((prevState) => !prevState);
+  const [selectedItems, setSelectedItems] = useState(categories[0]);
+  const handleModal = useCallback(() => {
+    setModalVisible((prevState) => !prevState);
+  }, [modalVisible]);
+  const handleSelectedItems = useCallback(
+    (items) => setSelectedItems(items),
+    [selectedItems]
+  );
   return (
     <>
       {/* <WelcomeScreen /> */}
@@ -53,8 +61,10 @@ export default function App() {
           icon={"file"}
           onPress={handleModal}
           modalVisible={modalVisible}
+          items={categories}
+          selectedItems={selectedItems}
+          onSelectedItemsChange={handleSelectedItems}
         />
-        <AppTextInput icon={"email"} placeholder={"enter"} />
       </AppScreen>
     </>
   );

@@ -52,4 +52,11 @@ const menuItems = [
   },
 ];
 
-export { initialMessages, menuItems };
+const categories = [
+  { label: "My Listings", iconColor: "primary", size: 30, value: 1 },
+  { label: "My  Clothingd", iconColor: "primary", size: 30, value: 1 },
+  { label: "My Wearables", iconColor: "primary", size: 30, value: 1 },
+  { label: "My Furnitures", iconColor: "primary", size: 30, value: 1 },
+];
+
+export { initialMessages, menuItems, categories };

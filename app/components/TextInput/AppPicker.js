@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   TextInputBase,
@@ -8,21 +8,28 @@ import {
   TouchableWithoutFeedback,
   Modal,
   Button,
+  FlatList,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../../config/colors";
 import AppText from "../AppText/AppText";
 import AppScreen from "../Screen/AppScreen";
+import AppPickerItem from "./AppPickerItem";
 
 const AppPicker = ({
   placeholder,
   onChangeText,
   maxLength,
   icon,
+  items,
   onPress,
   modalVisible,
+  selectedItems,
+  onSelectedItemsChange,
   ...otherProps
 }) => {
+  // const [modalVisible, setModalVisible] = useState(false);
+  // const handleModal = setModalVisible((prevState) => !prevState);
   return (
     <>
       <TouchableWithoutFeedback onPress={onPress}>
@@ -33,7 +40,9 @@ const AppPicker = ({
             style={styles.icon}
             size={30}
           />
-          <AppText style={styles.text}>{placeholder} </AppText>
+          <AppText style={styles.text}>
+            {selectedItems ? selectedItems.label : placeholder}{" "}
+          </AppText>
           <MaterialCommunityIcons
             name={"chevron-down"}
             color={colors.medium}
@@ -44,7 +53,22 @@ const AppPicker = ({
       </TouchableWithoutFeedback>
       <AppScreen>
         <Modal visible={modalVisible} animationType={"slide"}>
-          <Button title="close"></Button>
+          <Button title="close" onPress={onPress}></Button>
+          <FlatList
+            data={items}
+            keyExtractor={(item) => item.value.toString()}
+            renderItem={({ item }) => {
+              return (
+                <AppPickerItem
+                  label={item.label}
+                  onPress={() => {
+                    onPress(false);
+                    onSelectedItemsChange(item);
+                  }}
+                />
+              );
+            }}
+          />
         </Modal>
       </AppScreen>
     </>
