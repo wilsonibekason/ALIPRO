@@ -8,6 +8,9 @@ import * as Yup from "yup";
 import zud from "zod";
 import AppText from "../AppText/AppText";
 import ErrorMessage from "../Forms/ErrorMessage";
+import AppFormField from "../AppFormField/AppFormField";
+import AppSubmitButton from "../Forms/AppSubmitButton";
+import AppForm from "../Forms/AppForm";
 
 const ValidationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
@@ -22,7 +25,7 @@ const LoginScreen = () => {
           style={[styles.logo]}
           source={require("../../assets/logo-red.png")}
         />
-        <Formik
+        <AppForm
           initialValues={{
             email: "",
             password: "",
@@ -30,60 +33,44 @@ const LoginScreen = () => {
           onSubmit={(values) => console.log(values)}
           validationSchema={ValidationSchema}
         >
-          {({
-            handleBlur,
-            handleChange,
-            handleSubmit,
-            values,
-            errors,
-            touched,
-          }) => {
-            return (
-              <>
-                <AppTextInput
-                  placeholder={"email"}
-                  autoCapitalize={"none"}
-                  autoCorrect={false}
-                  icon={"email"}
-                  keyboardType={"email-address"}
-                  returnKeyType={"next"}
-                  name={"email"}
-                  onSubmitEditing={() => {
-                    return;
-                  }}
-                  onChangeText={handleChange("email")}
-                  value={""}
-                  style={[styles.input]}
-                  textContentType={"emailAddress"}
-                  placeholderTextColor={"#999"}
-                  underlineColorAndroid={"transparent"}
-                />
-                <ErrorMessage error={errors.email} />
+          <AppFormField
+            placeholder={"email"}
+            autoCapitalize={"none"}
+            autoCorrect={false}
+            icon={"email"}
+            keyboardType={"email-address"}
+            returnKeyType={"next"}
+            name={"email"}
+            onSubmitEditing={() => {
+              return;
+            }}
+            value={""}
+            style={[styles.input]}
+            textContentType={"emailAddress"}
+            placeholderTextColor={"#999"}
+            underlineColorAndroid={"transparent"}
+          />
 
-                <AppTextInput
-                  placeholder={"password"}
-                  autoCapitalize={"none"}
-                  autoCorrect={false}
-                  icon={"lock"}
-                  keyboardType={"password"}
-                  returnKeyType={"next"}
-                  onSubmitEditing={() => {
-                    return;
-                  }}
-                  onChangeText={handleChange("password")}
-                  secureTextEntry
-                  value={""}
-                  style={[styles.input]}
-                  textContentType={"emailAddress"}
-                  placeholderTextColor={"#999"}
-                  underlineColorAndroid={"transparent"}
-                />
-                <ErrorMessage error={errors.password} />
-                <MainButton onPress={handleSubmit} title={"Submit"} />
-              </>
-            );
-          }}
-        </Formik>
+          <AppFormField
+            placeholder={"password"}
+            autoCapitalize={"none"}
+            autoCorrect={false}
+            icon={"lock"}
+            keyboardType={"password"}
+            returnKeyType={"next"}
+            onSubmitEditing={() => {
+              return;
+            }}
+            secureTextEntry
+            value={""}
+            style={[styles.input]}
+            textContentType={"emailAddress"}
+            placeholderTextColor={"#999"}
+            underlineColorAndroid={"transparent"}
+            name={"password"}
+          />
+          <AppSubmitButton title={"Submit"} />
+        </AppForm>
       </AppScreen>
     </>
   );

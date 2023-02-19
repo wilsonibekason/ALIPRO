@@ -3,8 +3,8 @@ import { StyleSheet } from "react-native";
 import AppText from "../AppText/AppText";
 import { ErrorMessage as Error } from "formik";
 
-const ErrorMessage = ({ error }) => {
-  if (!error) return null;
+const ErrorMessage = ({ error, visible }) => {
+  if (!error | !visible) return null;
   return (
     <>
       <AppText style={[styles.error]}>{error} </AppText>
