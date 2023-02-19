@@ -1,16 +1,13 @@
-import { Formik } from "formik";
 import React from "react";
 import { Image, StyleSheet } from "react-native";
-import MainButton from "../MainButton";
-import AppTextInput from "../TextInput/TextInput";
+
 import AppScreen from "./AppScreen";
 import * as Yup from "yup";
-import zud from "zod";
-import AppText from "../AppText/AppText";
-import ErrorMessage from "../Forms/ErrorMessage";
+
 import AppFormField from "../AppFormField/AppFormField";
 import AppSubmitButton from "../Forms/AppSubmitButton";
 import AppForm from "../Forms/AppForm";
+import AppLogoImage from "../AppLogoImage/AppLogoImage";
 
 const ValidationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
@@ -21,7 +18,7 @@ const LoginScreen = () => {
   return (
     <>
       <AppScreen style={styles.container}>
-        <Image
+        <AppLogoImage
           style={[styles.logo]}
           source={require("../../assets/logo-red.png")}
         />

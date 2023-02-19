@@ -32,6 +32,7 @@ import AppPicker from "./app/components/TextInput/AppPicker";
 import { AppScreen } from "./app/components";
 import { categories } from "./app/utils/data";
 import LoginScreen from "./app/components/Screen/LoginScreen";
+import ListingEditingScreen from "./app/components/Screen/ListingEditingScreen";
 
 export default function App() {
   return (
@@ -41,7 +42,8 @@ export default function App() {
       {/* <Styles /> */}
       {/* <AppMessageScreen /> */}
       {/* <AccountScreen /> */}
-      <LoginScreen />
+      {/* <LoginScreen /> */}
+      <ListingEditingScreen />
     </>
   );
 }

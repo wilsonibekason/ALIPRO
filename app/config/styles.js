@@ -4,4 +4,7 @@ export default {
   text: {
     color: colors.dark,
   },
+  container: {
+    paddding: 5,
+  },
 };
