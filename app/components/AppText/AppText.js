@@ -1,7 +1,7 @@
 import React from "react";
 import { Platform, StyleSheet, Text } from "react-native";
 
-const AppText = ({ children, style }) => {
+const AppText = ({ children, style, ...otherProps }) => {
   let MainPlatform = Platform.select({
     ios: {
       fontSize: 20,
@@ -14,7 +14,9 @@ const AppText = ({ children, style }) => {
   });
   return (
     <>
-      <Text style={[styles.text, style]}>{children}</Text>
+      <Text style={[styles.text, style]} {...otherProps}>
+        {children}
+      </Text>
     </>
   );
 };

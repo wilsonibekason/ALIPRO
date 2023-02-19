@@ -53,10 +53,34 @@ const menuItems = [
 ];
 
 const categories = [
-  { label: "My Listings", iconColor: "primary", size: 30, value: 1 },
-  { label: "My  Clothingd", iconColor: "primary", size: 30, value: 1 },
-  { label: "My Wearables", iconColor: "primary", size: 30, value: 1 },
-  { label: "My Furnitures", iconColor: "primary", size: 30, value: 1 },
+  {
+    label: "My Listings",
+    iconColor: "primary",
+    size: 30,
+    value: 1,
+    backgroundColor: colors.primary,
+  },
+  {
+    label: "My  Clothingd",
+    iconColor: "primary",
+    size: 30,
+    value: 1,
+    backgroundColor: colors.secondary,
+  },
+  {
+    label: "My Wearables",
+    iconColor: "primary",
+    size: 30,
+    value: 1,
+    backgroundColor: colors.medium,
+  },
+  {
+    label: "My Furnitures",
+    iconColor: "primary",
+    size: 30,
+    value: 1,
+    backgroundColor: colors.tomato,
+  },
 ];
 
 export { initialMessages, menuItems, categories };

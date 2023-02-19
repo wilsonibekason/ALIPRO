@@ -41,9 +41,9 @@ export default function App() {
       {/* <ViewImageScreen /> */}
       {/* <Styles /> */}
       {/* <AppMessageScreen /> */}
-      {/* <AccountScreen /> */}
+      <AccountScreen />
       {/* <LoginScreen /> */}
-      <ListingEditingScreen />
+      {/* <ListingEditingScreen /> */}
     </>
   );
 }

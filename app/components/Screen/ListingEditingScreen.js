@@ -13,6 +13,7 @@ import AppForm from "../Forms/AppForm";
 import AppFormField from "../AppFormField/AppFormField";
 import AppSubmitButton from "../Forms/AppSubmitButton";
 import AppLogoImage from "../AppLogoImage/AppLogoImage";
+import CategoryPickerItem from "../Forms/CategoryPickerItem";
 
 const ListingEditingScreen = () => {
   const ValidationSchema = Yup.object().shape({
@@ -81,6 +82,8 @@ const ListingEditingScreen = () => {
               modalVisible={false}
               items={categories}
               name={"category"}
+              PickerItemComponent={CategoryPickerItem}
+              numberOfColumns={3}
             />
             <AppSubmitButton title={"Submit"} />
           </>

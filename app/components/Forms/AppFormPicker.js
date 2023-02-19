@@ -4,7 +4,15 @@ import AppPicker from "../TextInput/AppPicker";
 import AppTextInput from "../TextInput/TextInput";
 import ErrorMessage from "./ErrorMessage";
 
-const AppFormPicker = ({ text, items, name, placeholder, modalVisible }) => {
+const AppFormPicker = ({
+  text,
+  items,
+  name,
+  placeholder,
+  modalVisible,
+  PickerItemComponent,
+  numberOfColumns = 1,
+}) => {
   const { setFieldValue, errors, touched, values } = useFormikContext();
   const handleSelectedItems = (item) => setFieldValue(name, item);
   return (
@@ -13,6 +21,7 @@ const AppFormPicker = ({ text, items, name, placeholder, modalVisible }) => {
         icon={"email"}
         onChangeText={(text) => setFirstName(text)}
         placeholder={"Enter your Name"}
+        PickerItemComponent={PickerItemComponent}
       />
       <AppPicker
         placeholder={placeholder}
@@ -22,6 +31,7 @@ const AppFormPicker = ({ text, items, name, placeholder, modalVisible }) => {
         items={items}
         selectedItems={values[name]}
         onSelectedItemsChange={handleSelectedItems}
+        numberOfColumns={numberOfColumns}
       />
       <ErrorMessage error={errors[name]} visible={touched[name]} />
     </>
