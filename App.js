@@ -31,18 +31,9 @@ import { useCallback, useState } from "react";
 import AppPicker from "./app/components/TextInput/AppPicker";
 import { AppScreen } from "./app/components";
 import { categories } from "./app/utils/data";
+import LoginScreen from "./app/components/Screen/LoginScreen";
 
 export default function App() {
-  const [firstName, setFirstName] = useState("");
-  const [modalVisible, setModalVisible] = useState(false);
-  const [selectedItems, setSelectedItems] = useState(categories[0]);
-  const handleModal = useCallback(() => {
-    setModalVisible((prevState) => !prevState);
-  }, [modalVisible]);
-  const handleSelectedItems = useCallback(
-    (items) => setSelectedItems(items),
-    [selectedItems]
-  );
   return (
     <>
       {/* <WelcomeScreen /> */}
@@ -50,22 +41,7 @@ export default function App() {
       {/* <Styles /> */}
       {/* <AppMessageScreen /> */}
       {/* <AccountScreen /> */}
-      <AppScreen>
-        <AppTextInput
-          icon={"email"}
-          onChangeText={(text) => setFirstName(text)}
-          placeholder={"Enter your Name"}
-        />
-        <AppPicker
-          placeholder={"Catregory"}
-          icon={"file"}
-          onPress={handleModal}
-          modalVisible={modalVisible}
-          items={categories}
-          selectedItems={selectedItems}
-          onSelectedItemsChange={handleSelectedItems}
-        />
-      </AppScreen>
+      <LoginScreen />
     </>
   );
 }
