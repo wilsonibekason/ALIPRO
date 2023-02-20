@@ -33,6 +33,8 @@ import { AppScreen } from "./app/components";
 import { categories } from "./app/utils/data";
 import LoginScreen from "./app/components/Screen/LoginScreen";
 import ListingEditingScreen from "./app/components/Screen/ListingEditingScreen";
+import AppScreenNavigatorWrapper from "./app/screens/wrapper/App.screen.wrapper";
+import { TabNavigator } from "./app/screens/Navigator.screen";
 
 export default function App() {
   return (
@@ -44,6 +46,9 @@ export default function App() {
       <AccountScreen />
       {/* <LoginScreen /> */}
       {/* <ListingEditingScreen /> */}
+      <AppScreenNavigatorWrapper>
+        <TabNavigator />
+      </AppScreenNavigatorWrapper>
     </>
   );
 }
