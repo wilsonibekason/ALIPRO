@@ -1,4 +1,4 @@
-const useNavigation = ({ screenName, navigation }) =>
-  navigation.navigate(screenName);
+const useNavigation = ({ screenName, navigation, ...otherOptions }) =>
+  navigation.navigate(screenName, { ...otherOptions });
 
 export { useNavigation };

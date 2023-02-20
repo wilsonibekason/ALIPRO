@@ -2,8 +2,10 @@ import React from "react";
 import { Image, StyleSheet, View } from "react-native";
 import colors from "../../config/colors";
 import AppText from "../AppText/AppText";
+import ListItem from "../ListItem/ListItem";
 
-const ListingDetailScreen = () => {
+const ListingDetailScreen = ({ route }) => {
+  const listing = route.params;
   return (
     <>
       <View>
@@ -12,8 +14,15 @@ const ListingDetailScreen = () => {
           source={require("../../../app/assets/jacket.jpg")}
         />
         <View style={styles.detailsContainer}>
-          <AppText></AppText>
-          <AppText></AppText>
+          <AppText>Title</AppText>
+          <AppText>100</AppText>
+          <View>
+            <ListItem
+              image={listing.image}
+              title={listing.title}
+              subTitle={listing.subTitle}
+            />
+          </View>
         </View>
       </View>
     </>

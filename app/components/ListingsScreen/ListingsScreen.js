@@ -1,11 +1,12 @@
 import React from "react";
 import { FlatList, StyleSheet } from "react-native";
 import colors from "../../config/colors";
+import { useNavigation } from "../../hooks/useNavigate";
 import { initialMessages } from "../../utils/data";
 import { AppCard } from "../AppCard";
 import AppScreen from "../Screen/AppScreen";
 
-const ListingsScreen = () => {
+const ListingsScreen = ({ navigation, route }) => {
   return (
     <>
       <AppScreen style={styles.screen}>
@@ -18,6 +19,11 @@ const ListingsScreen = () => {
               subTitle={item.description}
               title={item.title}
               key={item.id}
+              onPress={useNavigation({
+                screenName: "ListingDetails",
+                navigation,
+                item,
+              })}
             />
           )}
         />
