@@ -14,7 +14,7 @@ const ValidationSchema = Yup.object().shape({
   password: Yup.string().required().label("Password").min(4),
 });
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
   return (
     <>
       <AppScreen style={styles.container}>

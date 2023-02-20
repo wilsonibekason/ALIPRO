@@ -47,7 +47,7 @@ export default function App() {
       {/* <LoginScreen /> */}
       {/* <ListingEditingScreen /> */}
       <AppScreenNavigatorWrapper>
-        <TabNavigator />
+        {/* <TabNavigator /> */}
       </AppScreenNavigatorWrapper>
     </>
   );
