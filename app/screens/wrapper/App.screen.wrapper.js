@@ -1,11 +1,14 @@
 import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import { StyleSheet, View } from "react-native";
+import { NavigationTheme } from "../../navigation/navigationTheme";
 
 const AppScreenNavigatorWrapper = ({ children }) => {
   return (
     <>
-      <NavigationContainer>{children}</NavigationContainer>
+      <NavigationContainer theme={NavigationTheme}>
+        {children}
+      </NavigationContainer>
     </>
   );
 };

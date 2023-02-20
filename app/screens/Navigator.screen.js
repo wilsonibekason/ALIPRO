@@ -47,7 +47,7 @@ export const TabNavigator = () => {
     >
       <Tab.Screen
         name={"Tweets"}
-        component={Tweets}
+        component={StackNavigatorScreen}
         options={{
           tabBarIcon: ({ color, focused, size }) => (
             <MaterialCommunityIcons

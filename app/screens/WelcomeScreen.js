@@ -8,8 +8,9 @@ import {
   View,
 } from "react-native";
 import MainButton from "../components/MainButton";
+import { useNavigation } from "../hooks/useNavigate";
 
-const WelcomeScreen = () => {
+const WelcomeScreen = ({ navigation, route }) => {
   return (
     <ImageBackground
       source={require("../assets/background.jpg")}
@@ -20,7 +21,10 @@ const WelcomeScreen = () => {
         <Text style={styles.tagline}>Sell what you don't need </Text>
       </View>
       <View style={styles.buttonContainer}>
-        <MainButton title={"Login"} />
+        <MainButton
+          title={"Login"}
+          onPress={useNavigation({ screenName: "Login", navigation })}
+        />
         <MainButton title={"Register"} color={""} />
       </View>
       <View style={styles.registerButton}></View>
