@@ -15,6 +15,8 @@ import AppSubmitButton from "../Forms/AppSubmitButton";
 import AppLogoImage from "../AppLogoImage/AppLogoImage";
 import CategoryPickerItem from "../Forms/CategoryPickerItem";
 import FormImagePicker from "../Forms/FormImagePicker";
+import * as Location from "expo-location";
+import { useLocation } from "../../hooks/useLocation";
 
 const ListingEditingScreen = () => {
   const ValidationSchema = Yup.object().shape({
@@ -24,6 +26,7 @@ const ListingEditingScreen = () => {
     category: Yup.object().required().label("Category").nullable(),
     images: Yup.array().min(1, "Please Select at least one image").nullable(),
   });
+  const location = useLocation();
   return (
     <>
       <AppScreen style={[StyleSchemes.container]}>
