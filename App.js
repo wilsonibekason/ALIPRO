@@ -35,6 +35,7 @@ import LoginScreen from "./app/components/Screen/LoginScreen";
 import ListingEditingScreen from "./app/components/Screen/ListingEditingScreen";
 import AppScreenNavigatorWrapper from "./app/screens/wrapper/App.screen.wrapper";
 import { TabNavigator } from "./app/screens/Navigator.screen";
+import LearnNavigator from "./app/navigation/LearnNavigator";
 
 export default function App() {
   return (
@@ -43,11 +44,12 @@ export default function App() {
       {/* <ViewImageScreen /> */}
       {/* <Styles /> */}
       {/* <AppMessageScreen /> */}
-      <AccountScreen />
+      {/* <AccountScreen /> */}
       {/* <LoginScreen /> */}
       {/* <ListingEditingScreen /> */}
       <AppScreenNavigatorWrapper>
         {/* <TabNavigator /> */}
+        <LearnNavigator />
       </AppScreenNavigatorWrapper>
     </>
   );

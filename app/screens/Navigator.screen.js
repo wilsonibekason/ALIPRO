@@ -12,7 +12,7 @@ import {
   useRoute,
 } from "@react-navigation/native";
 import { Button, Text, View } from "react-native";
-import colors from "../config/colors";
+import colors from "../config/colors"; 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 const Link = () => {
