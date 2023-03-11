@@ -8,3 +8,9 @@ export default {
   lightGray: "#CED0CE",
   dark: "#0C0C0C",
 };
+
+const animation = {
+  slide: "ease-in-out",
+};
+
+export { animation };
