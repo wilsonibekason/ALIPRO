@@ -4,9 +4,40 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import colors, { animation } from "../config/colors";
 import { useNavigation } from "../hooks/useNavigate";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+
+const Settings = () => (
+  <View>
+    <Text>Hello World i am here to learn</Text>
+  </View>
+);
+
+const Account = () => (
+  <View>
+    <Text>Hello I am among the Setting Options</Text>
+  </View>
+);
+
+export const TabNavigator = () => {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen
+        name="Settings"
+        // Nested
+        component={LearnNavigator}
+        options={{
+          tabBarIcon: ({ color, focused, size }) => (
+            <MaterialCommunityIcons name="home" size={size} color={color} />
+          ),
+        }}
+      ></Tab.Screen>
+      <Tab.Screen name="Account" component={Account}></Tab.Screen>
+    </Tab.Navigator>
+  );
+};
 const Products = ({ navigation }) => {
   return (
     <View style={[styles.container]}>
@@ -43,9 +74,6 @@ const LearnNavigator = () => {
         component={SingleProduct}
         options={({ navigation, route }) => ({
           title: route.params.id,
-          headerBackground: colors.tomato,
-          animation: slide,
-          contentStyle: colors.tomato,
         })}
       ></Stack.Screen>
     </Stack.Navigator>
