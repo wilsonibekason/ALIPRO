@@ -1,0 +1,33 @@
+{
+	"Function Component": {
+		"prefix": "rnfc",
+		"body": [
+"import React from 'react';",
+"import { StyleSheet, View } from 'react-native';",
+"",
+"const ${TM_FILENAME_BASE} = ({}) => {",
+"    return (",
+"        <View style={styles.container}>",
+"            <Text style={styles.text}>${TM_FILENAME_BASE}$0</Text>",
+"        </View>",
+"    );    ",
+"};",
+"",
+"const styles = StyleSheet.create({",
+"    container: {",
+"        flex: 1,",
+"        justifyContent: 'center',",
+"        alignItems: 'center',",
+"        backgroundColor: '#F5FCFF',",
+"    },",
+"    text: {",
+"        fontSize: 20,",
+"        textAlign: 'center',",
+"        margin: 10,",
+"    },",
+"});",
+"",
+"export default ${TM_FILENAME_BASE}"
+		]
+	}
+}

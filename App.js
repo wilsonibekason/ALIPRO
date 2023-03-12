@@ -40,17 +40,17 @@ import LearnNavigator from "./app/navigation/LearnNavigator";
 export default function App() {
   return (
     <>
-      {/* <WelcomeScreen /> */}
+      <WelcomeScreen />
       {/* <ViewImageScreen /> */}
       {/* <Styles /> */}
       {/* <AppMessageScreen /> */}
       {/* <AccountScreen /> */}
       {/* <LoginScreen /> */}
       {/* <ListingEditingScreen /> */}
-      <AppScreenNavigatorWrapper>
-        {/* <TabNavigator /> */}
-        <LearnNavigator />
-      </AppScreenNavigatorWrapper>
+      {/* <AppScreenNavigatorWrapper> */}
+      {/* <TabNavigator /> */}
+      {/* <LearnNavigator /> */}
+      {/* </AppScreenNavigatorWrapper> */}
     </>
   );
 }

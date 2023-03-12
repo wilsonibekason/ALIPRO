@@ -23,7 +23,7 @@ const WelcomeScreen = ({ navigation, route }) => {
       <View style={styles.buttonContainer}>
         <MainButton
           title={"Login"}
-          onPress={useNavigation({ screenName: "Login", navigation })}
+          // onPress={useNavigation({ screenName: "Login", navigation })}
         />
         <MainButton title={"Register"} color={""} />
       </View>
